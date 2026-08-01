@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import TaxCalculatorSuite from "@/components/calculators/TaxCalculatorSuite";
-import AdBreakDivider from "@/components/monetization/AdBreakDivider";
-import SidebarAdSlot from "@/components/monetization/SidebarAdSlot";
+import TaxCalculatorSuite from "../../../components/calculators/TaxCalculatorSuite";
+import AdBreakDivider from "../../../components/monetization/AdBreakDivider";
+import SidebarAdSlot from "../../../components/monetization/SidebarAdSlot";
 
 interface CalculatorNichePageProps {
   params: Promise<{ niche: string }>;

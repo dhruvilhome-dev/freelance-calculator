@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import ThemeToggle from "@/components/theme/ThemeToggle";
 import "./globals.css";
-import { Footer } from "@/components/Footer";
+import { Footer } from "../components/Footer";
+import ThemeToggle from "../components/theme/ThemeToggle";
 
 const themeBootstrapScript = `
   (() => {
