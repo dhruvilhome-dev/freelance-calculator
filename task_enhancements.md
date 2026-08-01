@@ -1,0 +1,9 @@
+- `[x]` **Enhancement Phase: Business Logic & UI**
+  - `[x]` Update `types/financial.ts` (add `stateTaxRate` and split tax fields)
+  - `[x]` Rewrite `freelanceCalculators.ts` (Progressive 2024 brackets, standard deductions, QBI deduction, state tax)
+  - `[x]` Enhance `TaxCalculatorSuite.tsx` UI
+    - `[x]` Add Filing Status toggle
+    - `[x]` Add State Tax selection dropdown
+    - `[x]` Apply glassmorphism and refined Tailwind gradients to the results card
+    - `[x]` Build detailed horizontal stacked revenue progress bar
+  - `[x]` Verify mathematical correctness with test script

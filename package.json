@@ -1,0 +1,30 @@
+{
+  "name": "freelance-calculator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "rm -rf .next",
+    "dev": "next dev --webpack",
+    "prebuild": "rm -rf .next",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "6.0.3"
+  }
+}

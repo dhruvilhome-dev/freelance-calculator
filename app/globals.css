@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --background: #020617;
+  --foreground: #e2e8f0;
+  --page-glow-a: rgba(8, 145, 178, 0.13);
+  --page-glow-b: rgba(79, 70, 229, 0.12);
+  --card-background: rgba(15, 23, 42, 0.8);
+  --summary-background: linear-gradient(to bottom, #1e293b, #020617);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --muted: #94a3b8;
+  --subtle: #64748b;
+  --input-background: #020617;
+  --input-border: #334155;
+  --metric-background: rgba(255, 255, 255, 0.045);
+  --ad-background: rgba(30, 41, 59, 0.8);
+}
+
+:root[data-theme="light"] {
+  --background: #f1f5f9;
+  --foreground: #0f172a;
+  --page-glow-a: rgba(34, 211, 238, 0.22);
+  --page-glow-b: rgba(129, 140, 248, 0.16);
+  --card-background: rgba(255, 255, 255, 0.92);
+  --summary-background: linear-gradient(to bottom, #e0f2fe, #f8fafc);
+  --card-border: rgba(148, 163, 184, 0.36);
+  --muted: #475569;
+  --subtle: #64748b;
+  --input-background: #f8fafc;
+  --input-border: #cbd5e1;
+  --metric-background: rgba(255, 255, 255, 0.86);
+  --ad-background: rgba(226, 232, 240, 0.88);
+}
+
+body {
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at 12% 0%, var(--page-glow-a), transparent 28rem),
+    radial-gradient(circle at 88% 20%, var(--page-glow-b), transparent 24rem),
+    var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.finance-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid #e0f2fe;
+  border-radius: 9999px;
+  background: #22d3ee;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.14);
+}
+
+.finance-range::-moz-range-thumb {
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 3px solid #e0f2fe;
+  border-radius: 9999px;
+  background: #22d3ee;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.14);
+}
+
+.theme-card {
+  background: var(--card-background);
+  border-color: var(--card-border);
+}
+
+.theme-summary {
+  background: var(--summary-background);
+  border-color: var(--card-border);
+}
+
+.theme-metric,
+.theme-stat {
+  background: var(--metric-background);
+  border-color: var(--card-border);
+}
+
+.theme-input {
+  background: var(--input-background);
+  border-color: var(--input-border);
+  color: var(--foreground);
+}
+
+.theme-range {
+  background: var(--input-border);
+}
+
+.ad-slot {
+  background: var(--ad-background);
+  border-color: var(--card-border);
+}
+
+.theme-toggle {
+  border-color: var(--card-border);
+  background: color-mix(in srgb, var(--card-background) 88%, transparent);
+}
+
+.theme-toggle-option {
+  color: var(--muted);
+}
+
+.theme-toggle-active {
+  background: #06b6d4;
+  color: #082f49;
+}
+
+:root[data-theme="light"] .calculator-shell .text-white,
+:root[data-theme="light"] .page-title {
+  color: #0f172a;
+}
+
+:root[data-theme="light"] .calculator-shell .text-slate-100,
+:root[data-theme="light"] .calculator-shell .text-slate-200,
+:root[data-theme="light"] .calculator-shell .text-slate-300 {
+  color: #1e293b;
+}
+
+:root[data-theme="light"] .calculator-shell .text-slate-400 {
+  color: #475569;
+}
+
+:root[data-theme="light"] .calculator-shell .text-slate-500 {
+  color: #64748b;
+}
+
+:root[data-theme="light"] .calculator-shell .border-white\/10,
+:root[data-theme="light"] .calculator-shell .border-slate-700 {
+  border-color: var(--card-border);
+}
