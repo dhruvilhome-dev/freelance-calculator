@@ -21,6 +21,9 @@ const themeBootstrapScript = `
 export const metadata: Metadata = {
   title: "Freelance Tax & Hourly Rate Calculator Suite",
   description: "A focused tax, hourly rate, and project margin calculator for freelancers.",
+  other: {
+    "google-adsense-account": "ca-pub-7576250688959009",
+  },
 };
 
 export default function RootLayout({
