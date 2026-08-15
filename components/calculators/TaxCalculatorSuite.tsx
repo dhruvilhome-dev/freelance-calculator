@@ -96,6 +96,9 @@ const SliderInput = memo(function SliderInput({
       </div>
       <input
         aria-label={`${label} slider`}
+        aria-valuemin={min}
+        aria-valuemax={max}
+        aria-valuenow={value}
         className="finance-range theme-range h-1.5 w-full cursor-pointer appearance-none rounded-full bg-slate-700"
         min={min}
         max={max}
@@ -156,16 +159,39 @@ function TaxLine({ label, value }: { label: string; value: number }) {
   );
 }
 
-export default function TaxCalculatorSuite() {
-  const [grossRevenue, setGrossRevenue] = useState(120_000);
-  const [expenses, setExpenses] = useState(20_000);
-  const [desiredTakeHome, setDesiredTakeHome] = useState(80_000);
-  const [billableHours, setBillableHours] = useState(30);
-  const [weeksWorked, setWeeksWorked] = useState(48);
-  const [filingStatus, setFilingStatus] = useState<FilingStatus>("single");
-  const [stateTaxRate, setStateTaxRate] = useState(0);
-  const [projectFee, setProjectFee] = useState(5_000);
-  const [directCosts, setDirectCosts] = useState(1_500);
+export interface TaxCalculatorSuiteProps {
+  initialGrossRevenue?: number;
+  initialExpenses?: number;
+  initialDesiredTakeHome?: number;
+  initialBillableHours?: number;
+  initialWeeksWorked?: number;
+  initialFilingStatus?: FilingStatus;
+  initialStateTaxRate?: number;
+  initialProjectFee?: number;
+  initialDirectCosts?: number;
+}
+
+export default function TaxCalculatorSuite({
+  initialGrossRevenue = 120_000,
+  initialExpenses = 20_000,
+  initialDesiredTakeHome = 80_000,
+  initialBillableHours = 30,
+  initialWeeksWorked = 48,
+  initialFilingStatus = "single",
+  initialStateTaxRate = 0,
+  initialProjectFee = 5_000,
+  initialDirectCosts = 1_500,
+}: TaxCalculatorSuiteProps = {}) {
+  const [grossRevenue, setGrossRevenue] = useState(initialGrossRevenue);
+  const [expenses, setExpenses] = useState(initialExpenses);
+  const [desiredTakeHome, setDesiredTakeHome] = useState(initialDesiredTakeHome);
+  const [billableHours, setBillableHours] = useState(initialBillableHours);
+  const [weeksWorked, setWeeksWorked] = useState(initialWeeksWorked);
+  const [filingStatus, setFilingStatus] = useState<FilingStatus>(initialFilingStatus);
+  const [stateTaxRate, setStateTaxRate] = useState(initialStateTaxRate);
+  const [projectFee, setProjectFee] = useState(initialProjectFee);
+  const [directCosts, setDirectCosts] = useState(initialDirectCosts);
+  const [copied, setCopied] = useState(false);
 
   const taxPayload: TaxInputPayload = useMemo(
     () => ({
@@ -226,6 +252,31 @@ export default function TaxCalculatorSuite() {
   const netTone = taxBreakdown.netProfit >= 0 ? "positive" : "negative";
   const marginTone =
     projectMargin.grossMarginAmount >= 0 ? "positive" : "negative";
+  const quarterlyTax = taxBreakdown.totalTax / 4;
+
+  const copySummary = () => {
+    const text = [
+      `📊 Freelance Tax & Rate Summary (2025–2026)`,
+      `• Annual Gross Revenue: ${currency.format(grossRevenue)}`,
+      `• Business Overhead: ${currency.format(expenses)}`,
+      `• Net Profit (Sched C): ${currency.format(taxBreakdown.netProfit)}`,
+      `• Total Estimated Tax: ${currency.format(taxBreakdown.totalTax)}`,
+      `  - Self-Employment Tax (SECA): ${currency.format(taxBreakdown.selfEmploymentTax)}`,
+      `  - Federal Income Tax: ${currency.format(taxBreakdown.estimatedFederalTax)}`,
+      stateTaxRate > 0 ? `  - State Income Tax: ${currency.format(taxBreakdown.estimatedStateTax)}` : null,
+      `• Quarterly 1040-ES Installment: ${currency.format(quarterlyTax)} / quarter (4x/yr)`,
+      `• Desired Take-Home: ${currency.format(desiredTakeHome)}`,
+      `• Recommended Minimum Hourly Rate: ${hourlyRateResult.minimumHourlyRate ? currency.format(hourlyRateResult.minimumHourlyRate) + '/hr' : 'N/A'} (${billableHours} hrs/wk, ${weeksWorked} wks/yr)`,
+      `\nModeled with Freelance Tax Suite (https://www.freelancecalcsuite.online)`
+    ].filter(Boolean).join('\n');
+
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      });
+    }
+  };
 
   return (
     <section className="calculator-shell mx-auto w-full max-w-6xl">
@@ -233,7 +284,7 @@ export default function TaxCalculatorSuite() {
         <div>
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-300">
             <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
-            2024 U.S. freelance estimator
+            2025–2026 U.S. freelance estimator
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Know your number. Price with confidence.
@@ -251,6 +302,55 @@ export default function TaxCalculatorSuite() {
             {availableBillableHours.toLocaleString()} hrs / year
           </strong>
         </div>
+      </div>
+
+      {/* Quick Scenario Presets */}
+      <div className="mb-6 flex flex-wrap items-center gap-2">
+        <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+          Quick Presets:
+        </span>
+        <button
+          type="button"
+          onClick={() => {
+            setGrossRevenue(55_000);
+            setExpenses(6_000);
+            setDesiredTakeHome(38_000);
+            setBillableHours(25);
+            setWeeksWorked(48);
+            setFilingStatus("single");
+          }}
+          className="rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-cyan-400/40 hover:bg-white/10 hover:text-cyan-300 transition-all"
+        >
+          🌱 Starter Solo ($55k)
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setGrossRevenue(120_000);
+            setExpenses(20_000);
+            setDesiredTakeHome(80_000);
+            setBillableHours(30);
+            setWeeksWorked(48);
+            setFilingStatus("single");
+          }}
+          className="rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-cyan-400/40 hover:bg-white/10 hover:text-cyan-300 transition-all"
+        >
+          💼 Established Pro ($120k)
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setGrossRevenue(220_000);
+            setExpenses(35_000);
+            setDesiredTakeHome(140_000);
+            setBillableHours(35);
+            setWeeksWorked(48);
+            setFilingStatus("married");
+          }}
+          className="rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-cyan-400/40 hover:bg-white/10 hover:text-cyan-300 transition-all"
+        >
+          🚀 Six-Figure Solo / Duo ($220k)
+        </button>
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.75fr)]">
@@ -462,9 +562,14 @@ export default function TaxCalculatorSuite() {
 
             <div className="theme-metric mt-4 rounded-2xl border border-white/10 bg-white/[0.045] p-4">
               <div className="flex items-end justify-between gap-4">
-                <p className="text-xs font-medium text-slate-400">
-                  Estimated annual tax
-                </p>
+                <div>
+                  <p className="text-xs font-medium text-slate-400">
+                    Estimated annual tax
+                  </p>
+                  <p className="mt-0.5 text-[11px] font-semibold text-cyan-400">
+                    Quarterly: {currency.format(quarterlyTax)} / qtr (1040-ES)
+                  </p>
+                </div>
                 <p className="text-2xl font-bold tracking-tight text-rose-400">
                   {currency.format(taxBreakdown.totalTax)}
                 </p>
@@ -524,8 +629,31 @@ export default function TaxCalculatorSuite() {
               </div>
             </div>
 
-            <p className="mt-5 text-xs leading-5 text-slate-500">
-              Uses 2024 federal brackets and a simplified QBI estimate. It
+            {/* 1-Click Copy Summary Button */}
+            <button
+              type="button"
+              onClick={copySummary}
+              className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 py-2.5 text-xs font-semibold text-slate-200 hover:border-cyan-400/40 hover:bg-white/10 hover:text-white transition-all active:scale-[0.98]"
+            >
+              {copied ? (
+                <>
+                  <svg className="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-emerald-400 font-bold">Summary Copied to Clipboard!</span>
+                </>
+              ) : (
+                <>
+                  <svg className="h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  <span>Copy Financial Summary</span>
+                </>
+              )}
+            </button>
+
+            <p className="mt-4 text-xs leading-5 text-slate-500">
+              Uses 2025–2026 federal brackets and a simplified QBI estimate. It
               excludes credits, itemized deductions, capital gains, and
               high-income QBI limitations.
             </p>

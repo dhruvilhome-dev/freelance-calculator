@@ -8,6 +8,10 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
+        userAgent: 'Googlebot',
+        allow: '/',
+      },
+      {
         userAgent: 'Mediapartners-Google',
         allow: '/',
       },

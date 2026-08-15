@@ -61,70 +61,105 @@ body {
 }
 
 .theme-card {
-  background: var(--card-background);
-  border-color: var(--card-border);
+  background: var(--card-background) !important;
+  border-color: var(--card-border) !important;
 }
 
 .theme-summary {
-  background: var(--summary-background);
-  border-color: var(--card-border);
+  background: var(--summary-background) !important;
+  border-color: var(--card-border) !important;
 }
 
 .theme-metric,
 .theme-stat {
-  background: var(--metric-background);
-  border-color: var(--card-border);
+  background: var(--metric-background) !important;
+  border-color: var(--card-border) !important;
 }
 
 .theme-input {
-  background: var(--input-background);
-  border-color: var(--input-border);
-  color: var(--foreground);
+  background: var(--input-background) !important;
+  border-color: var(--input-border) !important;
+  color: var(--foreground) !important;
 }
 
 .theme-range {
-  background: var(--input-border);
+  background: var(--input-border) !important;
 }
 
 .ad-slot {
-  background: var(--ad-background);
-  border-color: var(--card-border);
+  background: var(--ad-background) !important;
+  border-color: var(--card-border) !important;
 }
 
 .theme-toggle {
-  border-color: var(--card-border);
-  background: color-mix(in srgb, var(--card-background) 88%, transparent);
+  border-color: var(--card-border) !important;
+  background: color-mix(in srgb, var(--card-background) 88%, transparent) !important;
 }
 
 .theme-toggle-option {
-  color: var(--muted);
+  color: var(--muted) !important;
 }
 
 .theme-toggle-active {
-  background: #06b6d4;
-  color: #082f49;
+  background: #06b6d4 !important;
+  color: #082f49 !important;
 }
 
-:root[data-theme="light"] .calculator-shell .text-white,
+:root[data-theme="light"] .page-content .text-white,
 :root[data-theme="light"] .page-title {
   color: #0f172a;
 }
 
-:root[data-theme="light"] .calculator-shell .text-slate-100,
-:root[data-theme="light"] .calculator-shell .text-slate-200,
-:root[data-theme="light"] .calculator-shell .text-slate-300 {
+:root[data-theme="light"] .page-content .text-slate-100,
+:root[data-theme="light"] .page-content .text-slate-200,
+:root[data-theme="light"] .page-content .text-slate-300 {
   color: #1e293b;
 }
 
-:root[data-theme="light"] .calculator-shell .text-slate-400 {
+:root[data-theme="light"] .page-content .text-slate-400 {
   color: #475569;
 }
 
-:root[data-theme="light"] .calculator-shell .text-slate-500 {
+:root[data-theme="light"] .page-content .text-slate-500 {
   color: #64748b;
 }
 
-:root[data-theme="light"] .calculator-shell .border-white\/10,
-:root[data-theme="light"] .calculator-shell .border-slate-700 {
-  border-color: var(--card-border);
+:root[data-theme="light"] .page-content .border-white\/10,
+:root[data-theme="light"] .page-content .border-slate-700 {
+  border-color: var(--card-border) !important;
 }
+
+/* Background overrides for dark containers in light mode */
+:root[data-theme="light"] .page-content .bg-slate-900\/80,
+:root[data-theme="light"] .page-content .bg-slate-900\/70,
+:root[data-theme="light"] .page-content .bg-slate-900\/60,
+:root[data-theme="light"] .page-content .bg-slate-900,
+:root[data-theme="light"] .page-content .bg-slate-800 {
+  background-color: var(--card-background) !important;
+}
+
+:root[data-theme="light"] .page-content .bg-slate-950 {
+  background-color: var(--input-background) !important;
+}
+
+/* Light mode overrides for specific colors, pills, and bars */
+:root[data-theme="light"] .page-content .text-cyan-300 { color: #0891b2; } /* cyan-600 */
+:root[data-theme="light"] .page-content .bg-cyan-400\/10 { background-color: rgba(8, 145, 178, 0.1); }
+:root[data-theme="light"] .page-content .border-cyan-400\/20 { border-color: rgba(8, 145, 178, 0.2); }
+:root[data-theme="light"] .page-content .bg-cyan-300 { background-color: #0891b2; }
+
+:root[data-theme="light"] .page-content .text-violet-300 { color: #7c3aed; } /* violet-600 */
+:root[data-theme="light"] .page-content .bg-violet-400\/10 { background-color: rgba(124, 58, 237, 0.1); }
+
+:root[data-theme="light"] .page-content .text-emerald-300,
+:root[data-theme="light"] .page-content .text-emerald-400 { color: #059669; } /* emerald-600 */
+:root[data-theme="light"] .page-content .bg-emerald-400\/10 { background-color: rgba(5, 150, 105, 0.1); }
+:root[data-theme="light"] .page-content .bg-emerald-400 { background-color: #059669; }
+
+:root[data-theme="light"] .page-content .text-rose-300,
+:root[data-theme="light"] .page-content .text-rose-400 { color: #e11d48; } /* rose-600 */
+:root[data-theme="light"] .page-content .bg-rose-400\/10 { background-color: rgba(225, 29, 72, 0.1); }
+:root[data-theme="light"] .page-content .bg-rose-400 { background-color: #e11d48; }
+
+:root[data-theme="light"] .page-content .bg-slate-700 { background-color: #e2e8f0; } /* slate-200 */
+:root[data-theme="light"] .page-content .bg-slate-400 { background-color: #64748b; }
