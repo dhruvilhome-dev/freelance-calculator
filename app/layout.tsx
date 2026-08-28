@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -68,6 +69,8 @@ export default function RootLayout({
         <ThemeToggle />
         {/* Cookie consent banner — AdSense script loads inside this component only after user grants consent */}
         <CookieConsent />
+        {/* Vercel Web Analytics */}
+        <Analytics />
       </body>
     </html>
   );
