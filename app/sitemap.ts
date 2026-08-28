@@ -1,8 +1,34 @@
 import { MetadataRoute } from 'next';
+import { readdirSync } from 'fs';
+import { join } from 'path';
+
+/** Auto-discovers guide slugs from the filesystem so the sitemap stays in sync
+ *  whenever a new page.tsx is added under app/guides/[slug]/.
+ */
+function getGuideSlugs(): string[] {
+  try {
+    const guidesDir = join(process.cwd(), 'app', 'guides');
+    return readdirSync(guidesDir, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name);
+  } catch {
+    // Fallback to known slugs if the filesystem read fails (e.g. edge runtime)
+    return [
+      'quarterly-estimated-taxes',
+      'freelance-tax-deductions',
+      '1099-vs-w2-tax-difference',
+      'self-employed-retirement-plans',
+      'home-office-deduction-rules',
+      'freelance-health-insurance-deduction',
+      'california-state-taxes-freelancers',
+      's-corp-election-freelancers',
+    ];
+  }
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.freelancecalcsuite.online';
-  
+
   // Specialized niche calculator routes
   const niches = [
     'software-engineer',
@@ -21,12 +47,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  // High-value educational guides
-  const guidePages = [
-    'quarterly-estimated-taxes',
-    'freelance-tax-deductions',
-    '1099-vs-w2-tax-difference',
-  ].map((slug) => ({
+  // High-value educational guides — auto-discovered from app/guides/*
+  const guidePages = getGuideSlugs().map((slug) => ({
     url: `${baseUrl}/guides/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,

@@ -58,6 +58,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/calculator/copywriter" className="text-slate-400 hover:text-cyan-300 transition-colors">
+                  Copywriter Rate Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/calculator/digital-marketer" className="text-slate-400 hover:text-cyan-300 transition-colors">
+                  Digital Marketer Calculator
+                </Link>
+              </li>
+              <li>
                 <Link href="/calculator/california-freelance" className="text-slate-400 hover:text-cyan-300 transition-colors">
                   California Freelance Tax
                 </Link>
@@ -73,7 +83,7 @@ export function Footer() {
           {/* Educational Guides Col */}
           <div className="space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">
-              Tax & Rate Guides
+              Tax &amp; Rate Guides
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
@@ -94,6 +104,31 @@ export function Footer() {
               <li>
                 <Link href="/guides/1099-vs-w2-tax-difference" className="text-slate-400 hover:text-cyan-300 transition-colors">
                   1099 vs W-2 Tax Differences
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/self-employed-retirement-plans" className="text-slate-400 hover:text-cyan-300 transition-colors">
+                  SEP-IRA &amp; Solo 401(k) Guide
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/home-office-deduction-rules" className="text-slate-400 hover:text-cyan-300 transition-colors">
+                  Home Office Deduction Rules
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/freelance-health-insurance-deduction" className="text-slate-400 hover:text-cyan-300 transition-colors">
+                  Health Insurance Deduction
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/california-state-taxes-freelancers" className="text-slate-400 hover:text-cyan-300 transition-colors">
+                  California Freelance Taxes
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/s-corp-election-freelancers" className="text-slate-400 hover:text-cyan-300 transition-colors">
+                  S-Corp Election Guide
                 </Link>
               </li>
             </ul>

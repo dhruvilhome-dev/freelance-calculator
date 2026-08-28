@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import Header from "../components/Header";
 import { Footer } from "../components/Footer";
 import ThemeToggle from "../components/theme/ThemeToggle";
+import CookieConsent from "../components/CookieConsent";
 
 const themeBootstrapScript = `
   (() => {
@@ -58,14 +58,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
-        
-        {/* Google AdSense Script */}
-        <Script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
       </head>
       <body className="flex min-h-screen flex-col antialiased bg-[var(--background)] text-[var(--foreground)] selection:bg-cyan-500/20 selection:text-cyan-200">
         <Header />
@@ -74,6 +66,8 @@ export default function RootLayout({
         </main>
         <Footer />
         <ThemeToggle />
+        {/* Cookie consent banner — AdSense script loads inside this component only after user grants consent */}
+        <CookieConsent />
       </body>
     </html>
   );

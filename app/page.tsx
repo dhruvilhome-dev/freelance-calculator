@@ -374,7 +374,7 @@ export default function Home() {
         </section>
 
         {/* Niche Calculators Hub */}
-        <section className="space-y-6">
+        <section id="calculators" className="space-y-6 scroll-mt-24">
           <div className="border-b border-white/10 pb-4">
             <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
               Specialized Calculators by Role & Region

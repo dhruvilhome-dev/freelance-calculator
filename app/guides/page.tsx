@@ -41,6 +41,46 @@ export default function GuidesPage() {
       readTime: "10 min read",
       badgeColor: "bg-violet-400/10 text-violet-300 border-violet-400/20",
     },
+    {
+      slug: "self-employed-retirement-plans",
+      title: "Self-Employed Retirement Plans: SEP-IRA, Solo 401(k) & SIMPLE IRA",
+      description: "Compare contribution limits, tax deductions, and setup requirements for the three major self-employed retirement vehicles for 1099 contractors in 2025–2026.",
+      category: "Retirement Planning",
+      readTime: "10 min read",
+      badgeColor: "bg-blue-400/10 text-blue-300 border-blue-400/20",
+    },
+    {
+      slug: "home-office-deduction-rules",
+      title: "Home Office Deduction Rules for Freelancers (IRC §280A Complete Guide)",
+      description: "The IRS regular and exclusive use test explained, simplified vs actual expense method compared with a worked example, and how to file on Form 8829.",
+      category: "Tax Deductions",
+      readTime: "9 min read",
+      badgeColor: "bg-emerald-400/10 text-emerald-300 border-emerald-400/20",
+    },
+    {
+      slug: "freelance-health-insurance-deduction",
+      title: "Self-Employed Health Insurance Deduction: The Complete Freelancer Guide",
+      description: "How to deduct 100% of health, dental, and vision premiums above-the-line on Form 1040 — eligibility rules, ACA marketplace interaction, and worked tax savings example.",
+      category: "Tax Deductions",
+      readTime: "9 min read",
+      badgeColor: "bg-emerald-400/10 text-emerald-300 border-emerald-400/20",
+    },
+    {
+      slug: "california-state-taxes-freelancers",
+      title: "California Freelance Taxes: FTB, SDI & AB5 Guide (2025–2026)",
+      description: "FTB estimated tax deadlines, California income tax brackets up to 13.3%, SDI obligations, and the AB5 independent contractor test for CA freelancers.",
+      category: "State Taxes",
+      readTime: "11 min read",
+      badgeColor: "bg-amber-400/10 text-amber-300 border-amber-400/20",
+    },
+    {
+      slug: "s-corp-election-freelancers",
+      title: "S-Corp Election for Freelancers: When It Saves You Money on SE Tax",
+      description: "The salary vs distribution split strategy, the income threshold where S-Corp savings justify admin costs, and the Form 2553 election deadline explained.",
+      category: "Business Structure",
+      readTime: "11 min read",
+      badgeColor: "bg-rose-400/10 text-rose-300 border-rose-400/20",
+    },
   ];
 
   return (

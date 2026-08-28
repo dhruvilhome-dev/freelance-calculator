@@ -126,7 +126,7 @@ export default async function CalculatorNichePage({
           Home
         </Link>
         <span>/</span>
-        <Link href="/" className="hover:text-cyan-300 transition-colors">
+        <Link href="/#calculators" className="hover:text-cyan-300 transition-colors">
           Calculators
         </Link>
         <span>/</span>
