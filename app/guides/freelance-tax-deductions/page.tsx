@@ -16,8 +16,10 @@ export default function TaxDeductionsGuidePage() {
     headline: "The Ultimate Freelance Tax Deductions Checklist: Schedule C Write-Offs",
     description: "In-depth guide to maximizing tax deductions and reducing net taxable profit on IRS Form 1040 Schedule C for freelancers and 1099 contractors.",
     author: {
-      "@type": "Organization",
-      name: "Freelance Tax Suite Editorial Team",
+      "@type": "Person",
+      name: "Dhruvil Patel",
+      jobTitle: "Founder & Lead Financial Modeling Engineer",
+      url: "https://www.freelancecalcsuite.online/about",
     },
     publisher: {
       "@type": "Organization",
@@ -82,7 +84,9 @@ export default function TaxDeductionsGuidePage() {
             The Ultimate Schedule C Tax Deductions Checklist for Freelancers
           </h1>
           <div className="mt-4 flex items-center gap-4 text-xs text-slate-400">
-            <span>By Freelance Tax Suite Editorial Team</span>
+            <span className="text-slate-300 font-medium">By Dhruvil Patel</span>
+            <span>&bull;</span>
+            <span>Reviewed by Tax Suite Editorial</span>
             <span>&bull;</span>
             <span>IRS IRC §162 Compliance</span>
             <span>&bull;</span>

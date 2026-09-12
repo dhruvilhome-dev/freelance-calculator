@@ -16,8 +16,10 @@ export default function SelfEmployedRetirementPlansPage() {
     headline: "Self-Employed Retirement Plans: SEP-IRA, Solo 401(k) & SIMPLE IRA Guide",
     description: "In-depth comparative analysis of retirement account options, contribution rules, and tax sheltering strategies for independent contractors, freelancers, and small business owners.",
     author: {
-      "@type": "Organization",
-      name: "Freelance Tax Suite Editorial Team",
+      "@type": "Person",
+      name: "Dhruvil Patel",
+      jobTitle: "Founder & Lead Financial Modeling Engineer",
+      url: "https://www.freelancecalcsuite.online/about",
     },
     publisher: {
       "@type": "Organization",
@@ -85,7 +87,9 @@ export default function SelfEmployedRetirementPlansPage() {
             Self-Employed Retirement Plans: SEP-IRA, Solo 401(k) &amp; SIMPLE IRA (2025–2026 Guide)
           </h1>
           <div className="mt-4 flex items-center gap-4 text-xs text-slate-400">
-            <span>By Freelance Tax Suite Editorial Team</span>
+            <span className="text-slate-300 font-medium">By Dhruvil Patel</span>
+            <span>&bull;</span>
+            <span>Reviewed by Tax Suite Editorial</span>
             <span>&bull;</span>
             <span>IRS IRC §401 &amp; §408 Compliance</span>
             <span>&bull;</span>

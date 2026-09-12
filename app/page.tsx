@@ -71,6 +71,11 @@ export default function Home() {
       "price": "0",
       "priceCurrency": "USD"
     },
+    "author": {
+      "@type": "Person",
+      "name": "Dhruvil Patel",
+      "jobTitle": "Founder & Lead Software Engineer"
+    },
     "description": "Comprehensive financial modeling suite for 1099 contractors, solo professionals, and freelancers to estimate tax exposure, calculate hourly rates, and check project margins."
   };
 

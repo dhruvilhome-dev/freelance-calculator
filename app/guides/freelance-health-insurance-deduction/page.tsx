@@ -16,8 +16,10 @@ export default function FreelanceHealthInsuranceGuidePage() {
     headline: "Self-Employed Health Insurance Deduction: The Complete Freelancer Guide",
     description: "In-depth guide to deducting 100% of medical, dental, and vision health insurance premiums above-the-line on Form 1040 Schedule 1 for self-employed professionals.",
     author: {
-      "@type": "Organization",
-      name: "Freelance Tax Suite Editorial Team",
+      "@type": "Person",
+      name: "Dhruvil Patel",
+      jobTitle: "Founder & Lead Financial Modeling Engineer",
+      url: "https://www.freelancecalcsuite.online/about",
     },
     publisher: {
       "@type": "Organization",
@@ -85,7 +87,9 @@ export default function FreelanceHealthInsuranceGuidePage() {
             Self-Employed Health Insurance Deduction: 100% Write-Off Guide (2025–2026)
           </h1>
           <div className="mt-4 flex items-center gap-4 text-xs text-slate-400">
-            <span>By Freelance Tax Suite Editorial Team</span>
+            <span className="text-slate-300 font-medium">By Dhruvil Patel</span>
+            <span>&bull;</span>
+            <span>Reviewed by Tax Suite Editorial</span>
             <span>&bull;</span>
             <span>IRS IRC §162(l) &amp; Form 1040 Schedule 1</span>
             <span>&bull;</span>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "../components/Header";
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     "quarterly estimated taxes 1040-ES",
     "freelance project margin",
   ],
-  authors: [{ name: "Freelance Tax Suite Editorial Team" }],
+  authors: [{ name: "Dhruvil Patel, Lead Developer & Financial Modeling Specialist" }],
   openGraph: {
     title: "Freelance Tax & Hourly Rate Calculator Suite",
     description: "Free tax estimation, hourly rate modeling, and project margin planning for US freelancers and contractors.",
@@ -59,6 +60,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
+        {/* Google AdSense official script tag for automated review verification */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7576250688959009"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="flex min-h-screen flex-col antialiased bg-[var(--background)] text-[var(--foreground)] selection:bg-cyan-500/20 selection:text-cyan-200">
         <Header />

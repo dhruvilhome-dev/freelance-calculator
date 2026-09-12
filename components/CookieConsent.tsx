@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Script from "next/script";
 
 const CONSENT_KEY = "fcs-cookie-consent";
 
@@ -36,16 +35,6 @@ export default function CookieConsent() {
 
   return (
     <>
-      {/* Load AdSense only after explicit user consent */}
-      {consent === "granted" && (
-        <Script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || "ca-pub-7576250688959009"}`}
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      )}
-
       {/* Cookie Banner */}
       {visible && (
         <div

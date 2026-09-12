@@ -16,8 +16,10 @@ export default function W2vs1099GuidePage() {
     headline: "1099 Contractor vs W-2 Employee: Tax Differences & Rate Multiplier",
     description: "Detailed economic breakdown comparing W-2 salary and 1099 independent contractor revenue, explaining employer FICA taxes, benefits loss, and rate gross-up formulas.",
     author: {
-      "@type": "Organization",
-      name: "Freelance Tax Suite Editorial Team",
+      "@type": "Person",
+      name: "Dhruvil Patel",
+      jobTitle: "Founder & Lead Financial Modeling Engineer",
+      url: "https://www.freelancecalcsuite.online/about",
     },
     publisher: {
       "@type": "Organization",
@@ -82,7 +84,9 @@ export default function W2vs1099GuidePage() {
             1099 Contractor vs. W-2 Employee: The True Financial & Tax Difference
           </h1>
           <div className="mt-4 flex items-center gap-4 text-xs text-slate-400">
-            <span>By Freelance Tax Suite Editorial Team</span>
+            <span className="text-slate-300 font-medium">By Dhruvil Patel</span>
+            <span>&bull;</span>
+            <span>Reviewed by Tax Suite Editorial</span>
             <span>&bull;</span>
             <span>1099 Pricing Multiplier</span>
             <span>&bull;</span>

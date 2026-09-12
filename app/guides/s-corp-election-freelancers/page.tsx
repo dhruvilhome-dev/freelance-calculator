@@ -16,8 +16,10 @@ export default function SCorpElectionGuidePage() {
     headline: "S-Corp Election for Freelancers: How to Reduce Self-Employment Tax",
     description: "In-depth financial modeling guide explaining how an S-Corporation tax election (Form 2553) reduces SECA taxes through reasonable salary and shareholder distribution splits.",
     author: {
-      "@type": "Organization",
-      name: "Freelance Tax Suite Editorial Team",
+      "@type": "Person",
+      name: "Dhruvil Patel",
+      jobTitle: "Founder & Lead Financial Modeling Engineer",
+      url: "https://www.freelancecalcsuite.online/about",
     },
     publisher: {
       "@type": "Organization",
@@ -85,7 +87,9 @@ export default function SCorpElectionGuidePage() {
             S-Corp Election for Freelancers: When It Saves You Money on Taxes
           </h1>
           <div className="mt-4 flex items-center gap-4 text-xs text-slate-400">
-            <span>By Freelance Tax Suite Editorial Team</span>
+            <span className="text-slate-300 font-medium">By Dhruvil Patel</span>
+            <span>&bull;</span>
+            <span>Reviewed by Tax Suite Editorial</span>
             <span>&bull;</span>
             <span>IRS Form 2553 &amp; Reasonable Compensation</span>
             <span>&bull;</span>

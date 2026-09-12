@@ -16,8 +16,10 @@ export default function CaliforniaFreelanceTaxesGuidePage() {
     headline: "California Freelance Taxes: FTB Estimated Payments, SDI & AB5 Guide",
     description: "In-depth operational tax guide for California freelancers, contractors, and solo LLCs covering Franchise Tax Board brackets, quarterly 540-ES deadlines, AB5 worker classification, and state tax optimization.",
     author: {
-      "@type": "Organization",
-      name: "Freelance Tax Suite Editorial Team",
+      "@type": "Person",
+      name: "Dhruvil Patel",
+      jobTitle: "Founder & Lead Financial Modeling Engineer",
+      url: "https://www.freelancecalcsuite.online/about",
     },
     publisher: {
       "@type": "Organization",
@@ -85,7 +87,9 @@ export default function CaliforniaFreelanceTaxesGuidePage() {
             California Freelance Taxes: FTB, SDI &amp; AB5 Compliance Guide (2025–2026)
           </h1>
           <div className="mt-4 flex items-center gap-4 text-xs text-slate-400">
-            <span>By Freelance Tax Suite Editorial Team</span>
+            <span className="text-slate-300 font-medium">By Dhruvil Patel</span>
+            <span>&bull;</span>
+            <span>Reviewed by Tax Suite Editorial</span>
             <span>&bull;</span>
             <span>CA Franchise Tax Board (FTB) &amp; EDD</span>
             <span>&bull;</span>

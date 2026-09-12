@@ -16,8 +16,10 @@ export default function HomeOfficeDeductionGuidePage() {
     headline: "Home Office Deduction Rules for Freelancers: IRC §280A Complete Guide",
     description: "Detailed compliance guide explaining the IRS regular and exclusive use requirements, simplified $5/sq ft vs actual expense method, Form 8829 filing, and audit mitigation.",
     author: {
-      "@type": "Organization",
-      name: "Freelance Tax Suite Editorial Team",
+      "@type": "Person",
+      name: "Dhruvil Patel",
+      jobTitle: "Founder & Lead Financial Modeling Engineer",
+      url: "https://www.freelancecalcsuite.online/about",
     },
     publisher: {
       "@type": "Organization",
@@ -85,7 +87,9 @@ export default function HomeOfficeDeductionGuidePage() {
             Home Office Deduction Rules: The Complete IRS IRC §280A Freelance Guide
           </h1>
           <div className="mt-4 flex items-center gap-4 text-xs text-slate-400">
-            <span>By Freelance Tax Suite Editorial Team</span>
+            <span className="text-slate-300 font-medium">By Dhruvil Patel</span>
+            <span>&bull;</span>
+            <span>Reviewed by Tax Suite Editorial</span>
             <span>&bull;</span>
             <span>IRS Publication 587 &amp; Form 8829</span>
             <span>&bull;</span>

@@ -10,8 +10,30 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Us & Calculation Methodology",
+    url: "https://www.freelancecalcsuite.online/about",
+    description: "Mission, mathematical calculation methodology, and editorial standards of Freelance Tax Suite.",
+    mainEntity: {
+      "@type": "Person",
+      name: "Dhruvil Patel",
+      jobTitle: "Founder & Lead Software Engineer",
+      worksFor: {
+        "@type": "Organization",
+        name: "Freelance Tax Suite",
+        url: "https://www.freelancecalcsuite.online",
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen px-4 py-12 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-4xl space-y-12">
         
         {/* Header */}
@@ -115,6 +137,45 @@ export default function AboutPage() {
             <li><strong>California Franchise Tax Board (FTB):</strong> Publication 1060 & Form 540 Instructions</li>
             <li><strong>Texas Comptroller of Public Accounts:</strong> Franchise Tax Guidelines</li>
           </ul>
+        </section>
+
+        {/* Author & Founder E-E-A-T Section */}
+        <section className="rounded-3xl border border-cyan-500/20 bg-gradient-to-b from-slate-900 to-slate-950 p-6 sm:p-8 space-y-6">
+          <div className="border-b border-white/10 pb-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-0.5 text-xs font-semibold text-cyan-300">
+              <span>Editorial Leadership &amp; Authorship</span>
+            </div>
+            <h2 className="mt-3 text-xl font-bold tracking-tight text-white sm:text-2xl">
+              Meet the Creator &amp; Financial Modeling Team
+            </h2>
+            <p className="mt-1 text-xs text-slate-400">
+              Transparent authorship and continuous research backing every formula and article on Freelance Tax Suite.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-start gap-6">
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 text-2xl font-black text-slate-950 shadow-lg shadow-cyan-500/20">
+              DP
+            </div>
+            <div className="space-y-3">
+              <div>
+                <h3 className="text-lg font-bold text-white">Dhruvil Patel</h3>
+                <p className="text-xs font-medium text-cyan-300">
+                  Founder, Lead Software Engineer &amp; Financial Modeling Specialist
+                </p>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Dhruvil is a full-stack engineer and independent contractor who built Freelance Tax Suite after experiencing first-hand the lack of accurate, privacy-first tax modeling software for solo professionals. Combining modern algorithmic iterative solvers with direct IRS statutory rules (IRC §1401, §199A, §164), he created this platform to give freelancers mathematical clarity and confidence when quoting client rates and forecasting quarterly taxes.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-1">
+                <span>📍 Remote / Global</span>
+                <span>•</span>
+                <span>✉️ support@freelancecalcsuite.online</span>
+                <span>•</span>
+                <span className="text-emerald-400">✓ Actively maintained for 2025–2026 tax provisions</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Privacy Commitment */}
