@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "1099 Contractor vs W-2 Employee: Tax Differences & Rate Multiplier",
@@ -205,6 +206,12 @@ export default function W2vs1099GuidePage() {
               <strong>Example:</strong> For an equivalent $100,000 W-2 salary, your target 1099 gross revenue is $135,000. Divided by 1,440 billable hours, your minimum rate is <strong>$93.75 per hour</strong> (compared to the naive $50/hr W-2 hourly rate).
             </p>
           </section>
+
+          {/* E-E-A-T Editorial Verification */}
+          <AuthorBio
+            lastUpdated="2025–2026 Tax Year"
+            irsCitations="IRC §1401 (SECA), IRC §3101 (FICA) & BLS Compensation Data"
+          />
 
           {/* Bottom Action */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">

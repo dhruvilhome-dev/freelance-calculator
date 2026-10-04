@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "The Ultimate Freelance Tax Deductions Checklist: Schedule C Write-Offs",
@@ -197,6 +198,12 @@ export default function TaxDeductionsGuidePage() {
               <strong>Pro Tip:</strong> Never mix business and personal finances. Open a dedicated business checking account and credit card exclusively for all freelance revenue and deductible expenses.
             </p>
           </section>
+
+          {/* E-E-A-T Editorial Verification */}
+          <AuthorBio
+            lastUpdated="2025–2026 Tax Year"
+            irsCitations="IRS IRC §162, §179, §280A & Publication 535"
+          />
 
           {/* Bottom Callout */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">

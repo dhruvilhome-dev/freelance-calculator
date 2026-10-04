@@ -173,10 +173,10 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            © {currentYear} Freelance Calc Suite. All calculations are mathematical models for estimation and planning purposes only.
+            © {currentYear} Freelance Calc Suite. All calculations and rate models are provided for informational and educational estimation purposes only.
           </p>
           <p className="text-[11px] text-slate-600">
-            Compliant with Google AdSense Publisher Policies & IRS Publication Standards.
+            Independent financial modeling platform based on IRS statutory provisions (IRC §1401, §199A, §162).
           </p>
         </div>
 

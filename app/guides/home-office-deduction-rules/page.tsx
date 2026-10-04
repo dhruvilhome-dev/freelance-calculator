@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "Home Office Deduction Rules for Freelancers: IRC §280A Complete Guide (2025–2026)",
@@ -211,6 +212,12 @@ export default function HomeOfficeDeductionGuidePage() {
               However, any disallowed home office expenses due to the net income limitation are not lost—they can be <strong>carried forward indefinitely</strong> to future tax years using Form 8829, Part IV.
             </p>
           </section>
+
+          {/* E-E-A-T Editorial Verification */}
+          <AuthorBio
+            lastUpdated="2025–2026 Tax Year"
+            irsCitations="IRS IRC §280A, Rev. Proc. 2013-13 & Form 8829"
+          />
 
           {/* Bottom Action */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">

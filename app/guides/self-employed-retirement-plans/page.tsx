@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "Self-Employed Retirement Plans: SEP-IRA, Solo 401(k) & SIMPLE IRA Guide (2025–2026)",
@@ -239,6 +240,12 @@ export default function SelfEmployedRetirementPlansPage() {
               * Note: Retirement contributions reduce Federal and State Adjusted Gross Income (AGI), though they do not reduce Self-Employment Tax (SECA).
             </p>
           </section>
+
+          {/* E-E-A-T Editorial Verification */}
+          <AuthorBio
+            lastUpdated="2025–2026 Tax Year"
+            irsCitations="IRS IRC §401, §408, §408(k) & SECURE 2.0 Act"
+          />
 
           {/* Bottom Action */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">

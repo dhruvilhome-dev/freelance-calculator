@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "S-Corp Election for Freelancers: How to Reduce Self-Employment Tax (2025–2026)",
@@ -218,6 +219,12 @@ export default function SCorpElectionGuidePage() {
               * Missed the deadline? You can often request retroactive relief under <strong>IRS Revenue Procedure 2013-30</strong> by providing reasonable cause for late filing.
             </p>
           </section>
+
+          {/* E-E-A-T Editorial Verification */}
+          <AuthorBio
+            lastUpdated="2025–2026 Tax Year"
+            irsCitations="IRS Form 2553, Rev. Proc. 2013-30, IRC Subchapter S & §1402(a)"
+          />
 
           {/* Bottom Action */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">

@@ -123,20 +123,36 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Editorial Standards & Sources */}
+        {/* Editorial Standards & Mathematical Verification */}
         <section className="space-y-4">
-          <h2 className="text-xl font-bold text-white sm:text-2xl">Editorial Standards & IRS Sources</h2>
+          <h2 className="text-xl font-bold text-white sm:text-2xl">Editorial Standards &amp; Mathematical Verification</h2>
           <p className="text-slate-300 leading-relaxed">
-            All educational content, tax bracket constants, and deduction thresholds published on Freelance Tax Suite are reviewed against official documentation published by the Internal Revenue Service (IRS) and the US Department of the Treasury, including:
+            All educational content, tax bracket constants, mathematical models, and deduction thresholds published on Freelance Tax Suite undergo rigorous verification against official statutory documentation published by the Internal Revenue Service (IRS), the US Department of the Treasury, and state taxing departments:
           </p>
-          <ul className="space-y-1.5 text-xs sm:text-sm text-slate-400 list-disc pl-5">
-            <li><strong>IRS Publication 505:</strong> Tax Withholding and Estimated Tax</li>
-            <li><strong>IRS Publication 535:</strong> Business Expenses</li>
-            <li><strong>IRS Publication 334:</strong> Tax Guide for Small Business</li>
-            <li><strong>Internal Revenue Code (IRC):</strong> Sections 162, 164, 199A, 1401, 1402, and 6654</li>
-            <li><strong>California Franchise Tax Board (FTB):</strong> Publication 1060 & Form 540 Instructions</li>
-            <li><strong>Texas Comptroller of Public Accounts:</strong> Franchise Tax Guidelines</li>
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 space-y-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-cyan-400">IRS Publications &amp; Rev. Procs</h3>
+              <ul className="space-y-1.5 text-xs text-slate-300 list-disc pl-4">
+                <li><strong>IRS Rev. Proc. 2024-40:</strong> 2025–2026 inflation-adjusted federal tax brackets, standard deduction ($15,000 Single / $30,000 MFJ), and statutory phaseouts.</li>
+                <li><strong>IRS Publication 334:</strong> Tax Guide for Small Business (Schedule C allowable business expenses, depreciation basics, and sole proprietorship recordkeeping).</li>
+                <li><strong>IRS Publication 505 &amp; Form 1040-ES:</strong> Safe harbor guidelines, annualized income installment methods, and quarterly estimated tax deadlines.</li>
+                <li><strong>IRS Publication 535:</strong> Business Expense eligibility, startup costs, and deductible trade or business overhead.</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 space-y-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-cyan-400">Internal Revenue Code (IRC) Statutes</h3>
+              <ul className="space-y-1.5 text-xs text-slate-300 list-disc pl-4">
+                <li><strong>IRC §1401 &amp; §1402:</strong> Self-Employment Contributions Act (SECA 15.3% rate, 92.35% net profit base multiplier, and $176,100 OASDI cap).</li>
+                <li><strong>IRC §199A:</strong> Qualified Business Income (QBI) pass-through deduction modeling up to 20% of net income.</li>
+                <li><strong>IRC §164(f):</strong> Statutory above-the-line deduction for exactly 50% of self-employment tax liabilities on Form 1040.</li>
+                <li><strong>IRC §280A &amp; §162(l):</strong> Home office exclusive-use deduction rules and self-employed health insurance premium adjustments.</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-xs text-slate-400">
+            <strong>Annual Audit Cycle:</strong> Tax tables, Social Security wage bases, and state marginal rates are verified and updated every December upon IRS and state revenue department publication release.
+          </p>
         </section>
 
         {/* Author & Founder E-E-A-T Section */}
@@ -168,12 +184,42 @@ export default function AboutPage() {
                 Dhruvil is a full-stack engineer and independent contractor who built Freelance Tax Suite after experiencing first-hand the lack of accurate, privacy-first tax modeling software for solo professionals. Combining modern algorithmic iterative solvers with direct IRS statutory rules (IRC §1401, §199A, §164), he created this platform to give freelancers mathematical clarity and confidence when quoting client rates and forecasting quarterly taxes.
               </p>
               <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-1">
-                <span>📍 Remote / Global</span>
+                <span>📍 Registered Office: Ahmedabad, Gujarat, India (Operating Digitally Worldwide)</span>
                 <span>•</span>
-                <span>✉️ support@freelancecalcsuite.online</span>
+                <span>✉️ <a href="mailto:support@freelancecalcsuite.online" className="text-cyan-400 hover:underline">support@freelancecalcsuite.online</a></span>
                 <span>•</span>
                 <span className="text-emerald-400">✓ Actively maintained for 2025–2026 tax provisions</span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Business Information & Feedback Section */}
+        <section className="rounded-3xl border border-white/10 bg-slate-900/60 p-6 sm:p-8 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+            <div>
+              <h2 className="text-lg font-bold text-white">Contact &amp; Feedback Channel</h2>
+              <p className="text-xs text-slate-400">Reach our engineering and editorial team directly.</p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-xl bg-cyan-400 px-4 py-2 text-xs font-bold text-slate-950 hover:bg-cyan-300 transition-colors shrink-0"
+            >
+              Open Feedback Form &rarr;
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300">
+            <div>
+              <span className="font-semibold text-slate-400 uppercase tracking-wider block">Official Inquiries</span>
+              <p className="mt-1 font-mono text-cyan-300">support@freelancecalcsuite.online</p>
+            </div>
+            <div>
+              <span className="font-semibold text-slate-400 uppercase tracking-wider block">Location</span>
+              <p className="mt-1">Ahmedabad, GJ, India<br /><span className="text-slate-500">Remote &amp; Global Operations</span></p>
+            </div>
+            <div>
+              <span className="font-semibold text-slate-400 uppercase tracking-wider block">Typical Turnaround</span>
+              <p className="mt-1">Within 24–48 business hours for tax calculation inquiries and bug reports.</p>
             </div>
           </div>
         </section>

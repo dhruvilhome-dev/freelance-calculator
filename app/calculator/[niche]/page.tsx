@@ -34,6 +34,10 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.freelancecalcsuite.online/calculator/${niche}`,
     },
+    robots: {
+      index: false,
+      follow: true,
+    },
     openGraph: {
       title: `${data.title} Tax & Hourly Rate Calculator`,
       description: data.metaDescription,

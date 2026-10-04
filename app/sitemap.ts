@@ -29,24 +29,8 @@ function getGuideSlugs(): string[] {
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.freelancecalcsuite.online';
 
-  // Specialized niche calculator routes
-  const niches = [
-    'software-engineer',
-    'graphic-designer',
-    'consultant',
-    'copywriter',
-    'digital-marketer',
-    'california-freelance',
-    'texas-freelance',
-  ];
-
-  const nicheUrls = niches.map((niche) => ({
-    url: `${baseUrl}/calculator/${niche}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.85,
-  }));
-
+  // Sub-calculators under /calculator/* are marked noindex, follow to focus Googlebot
+  // on high-value canonical editorial guides during AdSense review.
   // High-value educational guides — auto-discovered from app/guides/*
   const guidePages = getGuideSlugs().map((slug) => ({
     url: `${baseUrl}/guides/${slug}`,
@@ -78,7 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
-    ...nicheUrls,
     ...guidePages,
     ...trustPages,
     ...legalPages,

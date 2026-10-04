@@ -46,28 +46,14 @@ export default function CookieConsent() {
           <div className="mx-auto flex max-w-5xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1.5 flex-1">
               <p className="text-xs font-bold text-white">
-                We use cookies to personalise ads and analyse traffic
+                We value your privacy &amp; transparency
               </p>
               <p className="text-[11px] leading-relaxed text-slate-400 max-w-2xl">
-                This site uses Google AdSense, which may use cookies and web
-                beacons to serve personalised advertisements based on your
-                browsing history. By clicking{" "}
-                <strong className="text-slate-200">&ldquo;Accept&rdquo;</strong>{" "}
-                you consent to this use. You can opt out of personalised ads at
-                any time via{" "}
-                <a
-                  href="https://adssettings.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 underline hover:text-cyan-300"
-                >
-                  Google&apos;s Ad Settings
-                </a>
-                . See our{" "}
+                We use cookies to analyze site traffic, improve user experience, and ensure essential site functionality. By clicking{" "}
+                <strong className="text-slate-200">&ldquo;Accept All&rdquo;</strong>, you consent to our use of cookies in accordance with our{" "}
                 <a href="/privacy" className="text-cyan-400 underline hover:text-cyan-300">
                   Privacy Policy
-                </a>{" "}
-                for full details.
+                </a>. All calculator inputs and financial numbers remain strictly client-side and are never stored on external servers.
               </p>
             </div>
             <div className="flex shrink-0 items-center gap-3">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "Quarterly Estimated Taxes for Freelancers: The 2025–2026 IRS 1040-ES Guide",
@@ -206,6 +207,12 @@ export default function QuarterlyTaxesGuidePage() {
               <li><strong>State Tax Department Portals:</strong> Remember to submit state estimated taxes via your state&apos;s Department of Revenue / Franchise Tax Board portal (e.g. CA FTB Web Pay, NY Dept of Taxation).</li>
             </ol>
           </section>
+
+          {/* E-E-A-T Editorial Verification */}
+          <AuthorBio
+            lastUpdated="2025–2026 Tax Year"
+            irsCitations="IRS Form 1040-ES, Publication 505 & IRC §6654"
+          />
 
           {/* Bottom Action */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">

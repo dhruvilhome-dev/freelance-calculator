@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "California Freelance Taxes: FTB Estimated Payments, SDI & AB5 Guide (2025–2026)",
@@ -230,6 +231,12 @@ export default function CaliforniaFreelanceTaxesGuidePage() {
               <p className="text-emerald-400 font-bold">Net Annual Take-Home Pay: $88,753</p>
             </div>
           </section>
+
+          {/* E-E-A-T Editorial Verification */}
+          <AuthorBio
+            lastUpdated="2025–2026 Tax Year"
+            irsCitations="CA FTB Pub 1060, Form 540-ES, CA Rev & Tax Code §17041 & AB5 / AB 2257"
+          />
 
           {/* Bottom Action */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">

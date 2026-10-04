@@ -51,6 +51,45 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Freelance Tax Suite",
+  url: "https://www.freelancecalcsuite.online",
+  logo: "https://www.freelancecalcsuite.online/icon.png",
+  description:
+    "Independent financial modeling platform providing tax calculations, hourly rate modeling, and Schedule C planning tools for 1099 freelancers.",
+  founder: {
+    "@type": "Person",
+    name: "Dhruvil Patel",
+    jobTitle: "Founder & Lead Software Engineer",
+    url: "https://www.freelancecalcsuite.online/about",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "support@freelancecalcsuite.online",
+    contactType: "customer support",
+  },
+  sameAs: [
+    "https://github.com/dhruvilhome-dev/freelance-calculator",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Freelance Tax Suite",
+  url: "https://www.freelancecalcsuite.online",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://www.freelancecalcsuite.online/guides?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,6 +99,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         {/* Google AdSense official script tag for automated review verification */}
         <Script
           async

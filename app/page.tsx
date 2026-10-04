@@ -3,6 +3,7 @@ import Link from "next/link";
 import TaxCalculatorSuite from "../components/calculators/TaxCalculatorSuite";
 import AdBreakDivider from "../components/monetization/AdBreakDivider";
 import SidebarAdSlot from "../components/monetization/SidebarAdSlot";
+import AuthorBio from "../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "Freelance Tax & Hourly Rate Calculator Suite | Free 1099 Tax Estimator",
@@ -441,6 +442,9 @@ export default function Home() {
 
           </div>
         </section>
+
+        {/* E-E-A-T Editorial & Reviewer Verification */}
+        <AuthorBio />
 
         {/* Frequently Asked Questions */}
         <section className="rounded-3xl border border-white/10 bg-slate-900/80 p-8 sm:p-10">

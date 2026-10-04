@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "Self-Employed Health Insurance Deduction: The Complete Freelancer Guide (2025–2026)",
@@ -202,6 +203,12 @@ export default function FreelanceHealthInsuranceGuidePage() {
               <p className="text-emerald-400 font-bold mt-2">Net Cash Tax Savings: $1,452 in Federal Tax + State Tax Savings (e.g. ~$400+ in CA/NY)</p>
             </div>
           </section>
+
+          {/* E-E-A-T Editorial Verification */}
+          <AuthorBio
+            lastUpdated="2025–2026 Tax Year"
+            irsCitations="IRS IRC §162(l), Form 1040 Schedule 1 & Pub 535"
+          />
 
           {/* Bottom Action */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
