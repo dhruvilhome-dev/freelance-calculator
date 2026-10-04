@@ -122,7 +122,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ThemeToggle />
-        {/* Cookie consent banner — AdSense script loads inside this component only after user grants consent */}
+        {/* Cookie consent banner — user privacy & essential compliance */}
         <CookieConsent />
         {/* Vercel Web Analytics */}
         <Analytics />

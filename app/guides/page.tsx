@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AuthorBio from "../../components/AuthorBio";
 
 export const metadata: Metadata = {
   title: "Freelance Tax & Financial Guides | Expert Insights for 1099 Contractors",
@@ -83,8 +84,49 @@ export default function GuidesPage() {
     },
   ];
 
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Freelance Tax & Financial Guides",
+    description:
+      "Comprehensive, in-depth financial guides covering freelance quarterly estimated taxes, Schedule C deductions, 1099 vs W2 rate modeling, and self-employment tax strategies.",
+    url: "https://www.freelancecalcsuite.online/guides",
+    publisher: {
+      "@type": "Organization",
+      name: "Freelance Tax Suite",
+      url: "https://www.freelancecalcsuite.online",
+    },
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.freelancecalcsuite.online",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Guides",
+        item: "https://www.freelancecalcsuite.online/guides",
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen px-4 py-12 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <div className="mx-auto max-w-5xl">
         
         {/* Header */}
@@ -132,6 +174,12 @@ export default function GuidesPage() {
             </article>
           ))}
         </div>
+
+        {/* E-E-A-T Editorial Verification */}
+        <AuthorBio
+          lastUpdated="2025–2026 Tax Year"
+          irsCitations="IRS Rev. Proc. 2024-40, Form 1040-ES, Form 2553 & IRC §1401"
+        />
 
         {/* Explore Calculators Banner */}
         <div className="mt-16 rounded-3xl border border-white/10 bg-gradient-to-r from-cyan-950/40 via-slate-900 to-blue-950/40 p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
